@@ -1,0 +1,32 @@
+.container {
+  width: 1920px;
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  padding-top: 24px;
+}
+.container .col {
+  width: 416px;
+  padding-bottom: 24px;
+}
+.container .col .card-body {
+  height: 118px;
+  left: 0px;
+  top: 312px;
+  padding: 20px 32px;
+}
+.container .col .card-title {
+  font-weight: 900;
+  font-size: 20px;
+}
+.container .col .card-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #525252;
+}
+.container .col .card .ai-text {
+  font-weight: bold;
+}/*# sourceMappingURL=style.css.map */
