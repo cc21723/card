@@ -29,4 +29,17 @@
 }
 .container .col .card .ai-text {
   font-weight: bold;
+}
+
+.header {
+  height: 500px;
+}
+.header .logo {
+  background-color: #de5959;
+}
+.header .logo a {
+  color: #f38b8b;
+}
+.header .logo a:hover {
+  color: aliceblue;
 }/*# sourceMappingURL=style.css.map */

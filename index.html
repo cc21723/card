@@ -142,3 +142,134 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
 </html>
+<script>
+// 	題目一：日幣計算機 (1:0.32)
+function TWDtoJPY(n){
+	if(typeof(n) == "number"){
+		if(n<0){
+			return "...沒錢別來亂"
+		}else{
+			return "你換到的日幣有：" + `${n/0.32}`
+		}
+	}else{
+		return "當我看不懂字串？？"
+	}
+	
+}
+// input 輸入
+TWDtoJPY(-1)
+TWDtoJPY("hi~")
+TWDtoJPY(2000)
+TWDtoJPY(320)
+// output 輸出
+// "...沒錢別來亂"
+// "當我看不懂字串？？"
+// "你換到的日幣有：6250"
+// "你換到的日幣有：1000"
+
+// 題目二：匯率計算機
+// 美金：1:29
+// 港幣：1:3
+// 英鎊：1:35
+function TWDtoAnother(n,currency){
+	if(currency === "USD"){
+		return `${n*29}`
+	}else if(currency === "HKD"){
+		return `${n*3}`
+	}else if(currency === "GBP"){
+		return `${n*35}`
+	}else{
+		return "..."
+	}
+}
+// input 輸入
+TWDtoAnother(100,"USD")
+TWDtoAnother(100,"Sword Art Online")
+TWDtoAnother(100,"HKD")
+TWDtoAnother(100,"GBP")
+// output 輸出
+// "2900"
+// "..."
+// "300"
+// "3500"
+
+
+// 題目三：BMI 計算機
+// 公式
+// input 輸入 
+// BMI(身高,體重)
+function bmi(height,weight){
+ const w = parseInt(weight);
+ const h = parseInt(height)/100;
+ const bmi = (w/(h*h)).toFixed(2);
+console.log("bmi= " + bmi);
+ if( bmi < 18.5){
+    	return "過輕"
+    }else if( bmi >=18.5 &&  bmi < 24){
+    	return "正常 "
+    }else if( bmi >=24 &&  bmi < 27){
+    	return "過重 "
+    }else if( bmi >=27 &&  bmi < 30){
+    	return "輕度肥胖 "
+    }else if( bmi >=30 &&  bmi < 35){
+    	return "中度肥胖 "
+    }else if( bmi  >=35){
+   		return "重度肥胖 "
+    }
+ 
+}
+// output 輸出
+// "正常"
+// "重度肥胖"
+// "中度肥胖"
+// "輕度肥胖"
+// "過重"
+// "過輕"
+
+
+// 進階題，不適合新手
+// 字串切割+if
+// 如果第一個數字是質數，請將第二、三個數字加總
+// 如果第一個數字是偶數，請將第二、三個數字相減
+// 如果第一個數字不是質數也不是偶數，請將第二、三個數字相乘
+function sum(str) {
+  const [a, b, c] = str.split(",").map(Number);
+  let result;
+  if (a <= 1) {
+    // 如果 a 小於等於 1 或者為偶數但不是 2，不是質數也不是偶數，將第二、三個數字相乘
+    result = b * c;
+  } else if (a % 2 === 0) {
+    // 如果 a 是偶數，相減
+    result = b - c;
+  } else if (a === 2 || isPrime(a) ) {
+    // 如果 a 為 2 或是質數，將第二、三個數字相加
+    result = b + c;
+  } else {
+    // 其他情況，相乘
+    result = b * c;
+  }
+  return result;
+}
+
+// 判斷是否為質數的函式
+function isPrime(n) {
+  if (n <= 1) return false;
+  if (n <= 3) return true;
+  if (n % 2 === 0 || n % 3 === 0) return false;
+  for (let i = 5; i * i <= n; i += 6) {
+    if (n % i === 0 || n % (i + 2) === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// input 輸入
+sum("13,20,10")
+sum("10,2,3")
+sum("9,5,7")
+// output 輸出
+// 30
+// -1
+// 35
+</script>
