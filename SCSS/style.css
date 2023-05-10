@@ -1,18 +1,31 @@
-.container {
-  width: 1920px;
-  font-family: "Noto Sans TC";
+body {
+  font-family: "Noto Sans TC , sans-serif";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+}
+body a {
+  color: #000;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1296px;
   padding-top: 24px;
 }
 .container .col {
-  width: 416px;
   padding-bottom: 24px;
 }
+.container .col .card {
+  height: 100%;
+}
+.container .col .card img:hover { /* Safari */
+  filter: drop-shadow(8px 8px 10px #000);
+  border-radius: 5px;
+}
 .container .col .card-body {
-  height: 118px;
+  flex-grow: 1;
   left: 0px;
   top: 312px;
   padding: 20px 32px;
